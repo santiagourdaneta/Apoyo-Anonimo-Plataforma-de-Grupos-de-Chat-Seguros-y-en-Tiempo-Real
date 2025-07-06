@@ -1,0 +1,62 @@
+# .gitignore para el proyecto Apoyo Anónimo
+
+# Go Backend (backend/)
+# --------------------
+/backend/bin/          # Ejecutables compilados
+/backend/*.exe         # Ejecutables de Windows
+/backend/*.test        # Archivos de prueba
+/backend/*.prof        # Archivos de perfilado
+/backend/vendor/       # Dependencias vendoreadas (si se usa 'go mod vendor')
+/backend/.idea/        # Archivos de configuración de IDEs JetBrains (IntelliJ, GoLand)
+/backend/.vscode/      # Archivos de configuración de VS Code (opcional, a veces se comparten)
+/backend/tmp/          # Archivos temporales
+/backend/build/        # Directorios de salida de compilación
+/backend/nohup.out     # Salida de comandos 'nohup'
+
+# Frontend (frontend/)
+# --------------------
+/frontend/node_modules/ # Directorio de dependencias de Node.js
+/frontend/dist/         # Directorio de salida de la compilación de Vite
+/frontend/.vscode/      # Archivos de configuración de VS Code (opcional)
+/frontend/.idea/        # Archivos de configuración de IDEs JetBrains (WebStorm)
+/frontend/npm-debug.log* # Logs de depuración de npm
+/frontend/yarn-debug.log* # Logs de depuración de Yarn
+/frontend/yarn-error.log* # Logs de error de Yarn
+/frontend/.env.local    # Variables de entorno locales (específicas de desarrollo)
+/frontend/.env.*.local  # Más archivos de entorno locales específicos
+/frontend/cache/        # Caché de desarrollo de Vue/Vite
+/frontend/.vite/        # Directorio de caché interno de Vite
+
+# Archivos de Variables de Entorno (para ambos)
+# -------------------------------------------
+.env                    # Archivos .env genéricos
+.env.* # Todos los archivos .env (ej. .env.development, .env.production)
+!*.example              # PERO, no ignores los archivos .env.example (para mostrar qué variables se necesitan)
+
+# Archivos de Base de Datos (para desarrollo local, NUNCA subir archivos de DB reales)
+# ---------------------------------------------------------------------------------
+*.sql.dump              # Volcados de base de datos SQL
+*.sqlite3               # Bases de datos SQLite (si se usaran)
+*.db                    # Archivos de base de datos genéricos
+
+# Archivos generados por el Sistema Operativo
+# ------------------------------------------
+.DS_Store               # macOS
+Thumbs.db               # Windows
+ehthumbs.db             # Windows
+.directory              # Linux (KDE)
+
+# Archivos de Logs
+# ----------------
+*.log
+logs/
+
+# Otros archivos temporales y de configuración de IDEs comunes
+# ----------------------------------------------------------
+*~                      # Archivos de respaldo de Emacs/Vim
+*.swp                   # Archivos swap de Vim
+*.swo                   # Archivos swap de Vim
+.project                # Archivos de proyecto Eclipse
+.classpath              # Archivos de classpath Eclipse
+.settings/              # Directorio de configuración de Eclipse
+.buildpath              # Archivos de buildpath Eclipse
