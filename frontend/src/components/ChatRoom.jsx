@@ -13,8 +13,9 @@ function ChatRoom() { // groupId y onLeaveGroup ya no son props
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [username, setUsername] = useState(() => {
-    // Generar un nombre anónimo al cargar el componente
-    return `Anónimo${Math.floor(Math.random() * 10000)}`;
+    // Generar un nombre anónimo al cargar el componente de forma segura
+    const randomValue = crypto.getRandomValues(new Uint32Array(1))[0] % 10000;
+    return `Anónimo${randomValue}`;
   });
   const [isSending, setIsSending] = useState(false); // Estado para deshabilitar botón al enviar
   const messagesEndRef = useRef(null);
